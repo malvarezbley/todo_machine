@@ -1,17 +1,16 @@
-//Forma 1
-
-/* const estilos = {
-  backgroundColor: 'red'
-}
- */
-
-//Usando archivos CSS
+import React from 'react';
+import { TodoContext } from '../TodoContext';
 import './TodoCounter.css';
 
-function TodoCounter({ total, completed}){
+function TodoCounter(){
+  const {
+    completedTodos, 
+    totalTodos,     
+  } = React.useContext(TodoContext);
+
   return (
     <h1 className='TodoCounter'>
-        Has completado <span>{completed}</span> de <span>{total}</span> ToDos
+        Has completado <span>{completedTodos}</span> de <span>{totalTodos}</span> ToDos
     </h1>
   );
 }
